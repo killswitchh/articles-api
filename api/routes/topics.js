@@ -4,7 +4,7 @@ const router = express.Router();
 // ADMIN ONLY Create Topic 
 router.post('/create/:id' , (request , response , next) => {
     const topicId = request.params.id;
-    response.status(200).json({
+    response.status(201).json({
         message : "Topic with id " + topicId +  " has been created"
     });
 });

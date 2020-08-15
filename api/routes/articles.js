@@ -4,7 +4,7 @@ const router = express.Router();
 // ADMIN ONLY Create article with topic name / id
 router.post('/:topic', (request , response , next)=>{
     const topicName = request.params.topic;
-    response.status(200).json({
+    response.status(201).json({
         message : 'Created article for topic ' + topicName
     });
 });
