@@ -1,0 +1,27 @@
+{
+  "name": "javascript-api",
+  "version": "1.0.0",
+  "description": "A node.js RESTful API built as a project for vumonic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/killswitchh/javascript-api.git"
+  },
+  "keywords": [
+    "node",
+    "restful",
+    "api"
+  ],
+  "author": "Balaji Jayakumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/killswitchh/javascript-api/issues"
+  },
+  "homepage": "https://github.com/killswitchh/javascript-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
