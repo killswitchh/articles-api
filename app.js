@@ -1,10 +1,10 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
-app.use((request , response , next) =>{
-    response.status(200).json({
-        message : 'Initial message'
-    });
-});
+const articleRoutes = require('./api/routes/articles');
+const topicRoutes = require('./api/routes/topics');
+
+app.use('/articles' , articleRoutes);
+app.use('/topics' , topicRoutes);
 
 module.exports = app;
