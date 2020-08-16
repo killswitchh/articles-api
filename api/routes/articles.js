@@ -4,7 +4,7 @@ const router = express.Router();
 // ADMIN ONLY Create article with topic name / id
 router.post('/:topicId', (request , response , next)=>{
 
-    // Sample call Request body : localhost:5050/articles/21
+    // Sample call : localhost:5050/articles/21
     // {
     //     "title" : "Article Title",
     //     "name"  : "Article Name",

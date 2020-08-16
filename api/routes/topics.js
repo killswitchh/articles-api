@@ -1,13 +1,15 @@
 const express = require ('express');
+const {v4:  uuid} = require('uuid');
+
 const router = express.Router();
 
 // ADMIN ONLY Create Topic 
-router.post('/create/:id' , (request , response , next) => {
-    const topicId = request.params.id;
+router.post('/' , (request , response , next) => {
+    
     const createdTopic = {
         "topic-name" : request.body.name,
         "topic-image" : request.body.image,
-        "topic-id" : request.params.id
+        "topic-id" : uuid()
     };
 
     response.status(201).json({
