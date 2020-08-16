@@ -2,10 +2,26 @@ const express = require ('express');
 const router = express.Router();
 
 // ADMIN ONLY Create article with topic name / id
-router.post('/:topic', (request , response , next)=>{
-    const topicName = request.params.topic;
+router.post('/:topicId', (request , response , next)=>{
+
+    // Sample call Request body : localhost:5050/articles/21
+    // {
+    //     "title" : "Article Title",
+    //     "name"  : "Article Name",
+    //     "image" : "Image url",
+    //     "isFeatured" : "True"
+    // }
+
+    const createdBody = {
+        "topic-id"           : request.params.topicId,
+        "article-title"      : request.body.title,
+        "article-name"       : request.body.name,
+        "article-image"      : request.body.image,
+        "article-isFeatured" : request.body.isFeatured
+    };
     response.status(201).json({
-        message : 'Created article for topic ' + topicName
+        message : 'Created article for topic ',
+        "article-details" : createdBody
     });
 });
 

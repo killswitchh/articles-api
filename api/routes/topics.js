@@ -4,10 +4,18 @@ const router = express.Router();
 // ADMIN ONLY Create Topic 
 router.post('/create/:id' , (request , response , next) => {
     const topicId = request.params.id;
+    const createdTopic = {
+        "topic-name" : request.body.name,
+        "topic-image" : request.body.image,
+        "topic-id" : request.params.id
+    };
+
     response.status(201).json({
-        message : "Topic with id " + topicId +  " has been created"
+        message : "Topic has been created",
+        "created-topic-details" : createdTopic
     });
 });
+
 
 // Get all topics for a topic
 router.get('/alltopics' , (request , response , next)=>{
