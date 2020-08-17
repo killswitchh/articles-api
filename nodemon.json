@@ -1,6 +1,0 @@
-{
-    "env" : {
-        "MONGO_ATLAS_PWD" : "bala1104",
-        "MONGO_ATLAS_DB_NAME" : "articles_db"
-    }
-}
