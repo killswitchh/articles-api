@@ -17,9 +17,12 @@ mongoose.connect(
         useNewUrlParser: true, 
         useUnifiedTopology: true 
     }
-    );
+    )
+    .then(() => console.log("Successfully connected to MongoDB."))
+    .catch(err => console.error("Connection error", err));
 
-
+mongoose.Promise = global.Promise;
+    
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended : false}));
 app.use(express.json());
