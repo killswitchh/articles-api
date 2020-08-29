@@ -1,10 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose')
-const { v4: uuid } = require('uuid');
-
 const router = express.Router();
 const Topic = require("../models/topics");
-const { response } = require('express');
 
 // ADMIN ONLY Create Topic 
 router.post('/', (request, response, next) => {
