@@ -136,6 +136,12 @@ router.get('/allarticles/:topicId', (request, response, next) => {
 
 
 // ADMIN ONLY Update article
+//[
+//     {
+//         "keyName" : "title",
+//         "value" : "updated_title"
+//     }
+// ]
 router.patch('/:id' , (request , response , next) => {
     const id = request.params.id;
     const updateOps = {};

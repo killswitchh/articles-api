@@ -100,6 +100,12 @@ router.get('/:id', (request, response, next) => {
 });
 
 // PATCH topic using topic ID
+// [
+//     {
+//         "keyName" : "topic_image",
+//         "value" : "updated_topic_image"
+//     }
+// ]
 router.patch('/:id' , (request , response , next) => {
     const id = request.params.id;
     const updateOps = {};
