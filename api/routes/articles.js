@@ -36,7 +36,23 @@ router.post('/', (request, response, next) => {
         });
         article.save()
         .then(result => {
-            response.status(201).json(result);
+            response.status(201).json({
+                message: "Article has been created",
+                details: {
+                    _id : result._id,
+                    topic : result.topic,
+                    article_id : result.article_id,
+                    article_title : result.article_title,
+                    article_image:result.article_image,
+                    article_content:result.article_content,
+                    is_featured:result.is_featured,
+                    _id : result._id,
+                    get_request : {
+                        type : "GET",
+                        url : "http://localhost:5050/articles/" + result._id
+                    }
+                }
+            });
         })
         .catch(err => {
             response.status(500).json({
@@ -45,8 +61,6 @@ router.post('/', (request, response, next) => {
         });
     });
 });
-
-
 
 // Get all articles
 router.get('/', (request, response, next) => {
@@ -177,7 +191,7 @@ router.delete('/:id' , (request , response ,next) => {
     .then(result => {
         response.status(200).json({
             message : "Article Deleted",
-            deleted_product_id : id
+            deleted_article_id : id
         });
     })
     .catch(err=>{
